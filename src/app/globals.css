@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo%20Tammudu%202:700|Noto%20Sans%20Cypriot:400');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,11 +17,99 @@
   }
 }
 
-body {
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  body {
+    font-family: 'Noto Sans Cypriot';
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: 'Baloo Tammudu 2';
+    font-weight: 700;
+  }
+
+  html {
+    font-size: 100%;
+    font-family: 'Noto Sans Cypriot';
+    font-weight: 400;
+  } /* 16px */
+
+  h1 {
+    font-size: 4.21rem; /* 67.36px */
+  }
+
+  h2 {
+    font-size: 3.158rem; /* 50.56px */
+  }
+
+  h3 {
+    font-size: 2.369rem; /* 37.92px */
+  }
+
+  h4 {
+    font-size: 1.777rem; /* 28.48px */
+  }
+
+  h5 {
+    font-size: 1.333rem; /* 21.28px */
+  }
+
+  small {
+    font-size: 0.75rem; /* 12px */
+  }
+
+  :root {
+    --background: 37.5 29% 95%;
+    --foreground: 0 0% 19.61%;
+    --muted: 37 23% 94%;
+    --muted-foreground: 37 9% 34%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 0 0% 19.61%;
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 19.61%;
+    --border: 37.5 38.71% 87.84%;
+    --input: 37.5 39% 66%;
+    --primary: 37 39% 88%;
+    --primary-foreground: 37.5 39% 20%;
+    --secondary: 273.96 22% 91.65%;
+    --secondary-foreground: 273.33 21% 15%;
+    --accent: 37 13% 88%;
+    --accent-foreground: 37 13% 28%;
+    --destructive: 7 82% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 37.5 38.71% 87.84%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 37 56% 1%;
+    --foreground: 37 32% 99%;
+    --muted: 37 23% 6%;
+    --muted-foreground: 37 9% 66%;
+    --popover: 37 56% 2%;
+    --popover-foreground: 0 0% 100%;
+    --card: 37 56% 2%;
+    --card-foreground: 0 0% 100%;
+    --border: 37 9% 12%;
+    --input: 37 9% 12%;
+    --primary: 37 39% 88%;
+    --primary-foreground: 37 39% 28%;
+    --secondary: 37 12% 13%;
+    --secondary-foreground: 37 12% 73%;
+    --accent: 37 12% 13%;
+    --accent-foreground: 37 12% 73%;
+    --destructive: 13 48% 23%;
+    --destructive-foreground: 13 48% 83%;
+    --ring: 37 39% 88%;
   }
 }

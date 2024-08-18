@@ -14,24 +14,66 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
-  password String
-  name     String
-  role     String
+  id            String    @id @default(cuid())
+  email         String    @unique
+  emailVerified DateTime?
+  firstName     String
+  lastName      String
+  photo         String?
+  title         String?
+  bio           String?
+  cv            String?
+  accounts      Account[]
+  sessions      Session[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
-model Title {
-  id   Int    @id @default(autoincrement())
-  name String
-  rows Json
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@id([identifier, token])
 }
 
 model SocialLink {
-  id   Int    @id @default(autoincrement())
-  name String
-  url  String
-  icon String
+  id       Int    @id @default(autoincrement())
+  name     String
+  url      String
+  iconType String
 }
 
 model Project {
@@ -48,8 +90,8 @@ model Service {
   description String
 }
 
-model Presentation {
-  id      Int    @id @default(autoincrement())
-  content String
-  image   String
+model Skill {
+  id       Int    @id @default(autoincrement())
+  name     String
+  iconType String
 }

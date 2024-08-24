@@ -1,115 +1,59 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo%20Tammudu%202:700|Noto%20Sans%20Cypriot:400');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 33 69% 97%;
+    --foreground: 32 5% 0%;
+    --card: 32 50% 90%;
+    --card-foreground: 32 5% 10%;
+    --popover: 32 100% 95%;
+    --popover-foreground: 32 100% 0%;
+    --primary: 32 37.9% 46.1%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 32 30% 70%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: -6 30% 85%;
+    --muted-foreground: 32 5% 35%;
+    --accent: -6 30% 80%;
+    --accent-foreground: 32 5% 10%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 32 5% 90%;
+    --border: 32 30% 50%;
+    --input: 32 30% 18%;
+    --ring: 32 37.9% 46.1%;
+    --radius: 0.5rem;
   }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .dark {
+    --background: 32 50% 5%;
+    --foreground: 32 5% 90%;
+    --card: 32 50% 0%;
+    --card-foreground: 32 5% 90%;
+    --popover: 32 50% 5%;
+    --popover-foreground: 32 5% 90%;
+    --primary: 32 37.9% 46.1%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 32 30% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: -6 30% 15%;
+    --muted-foreground: 32 5% 60%;
+    --accent: -6 30% 15%;
+    --accent-foreground: 32 5% 90%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 32 5% 90%;
+    --border: 32 30% 18%;
+    --input: 32 30% 18%;
+    --ring: 32 37.9% 46.1%;
+    --radius: 0.5rem;
   }
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
   body {
-    font-family: 'Noto Sans Cypriot';
-    font-weight: 400;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-family: 'Baloo Tammudu 2';
-    font-weight: 700;
-  }
-
-  html {
-    font-size: 100%;
-    font-family: 'Noto Sans Cypriot';
-    font-weight: 400;
-  } /* 16px */
-
-  h1 {
-    font-size: 4.21rem; /* 67.36px */
-  }
-
-  h2 {
-    font-size: 3.158rem; /* 50.56px */
-  }
-
-  h3 {
-    font-size: 2.369rem; /* 37.92px */
-  }
-
-  h4 {
-    font-size: 1.777rem; /* 28.48px */
-  }
-
-  h5 {
-    font-size: 1.333rem; /* 21.28px */
-  }
-
-  small {
-    font-size: 0.75rem; /* 12px */
-  }
-
-  :root {
-    --background: 37.5 29% 95%;
-    --foreground: 0 0% 19.61%;
-    --muted: 37 23% 94%;
-    --muted-foreground: 37 9% 34%;
-    --popover: 0 0% 99%;
-    --popover-foreground: 0 0% 19.61%;
-    --card: 0 0% 99%;
-    --card-foreground: 0 0% 19.61%;
-    --border: 37.5 38.71% 87.84%;
-    --input: 37.5 39% 66%;
-    --primary: 37 39% 88%;
-    --primary-foreground: 37.5 39% 20%;
-    --secondary: 273.96 22% 91.65%;
-    --secondary-foreground: 273.33 21% 15%;
-    --accent: 37 13% 88%;
-    --accent-foreground: 37 13% 28%;
-    --destructive: 7 82% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --ring: 37.5 38.71% 87.84%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 37 56% 1%;
-    --foreground: 37 32% 99%;
-    --muted: 37 23% 6%;
-    --muted-foreground: 37 9% 66%;
-    --popover: 37 56% 2%;
-    --popover-foreground: 0 0% 100%;
-    --card: 37 56% 2%;
-    --card-foreground: 0 0% 100%;
-    --border: 37 9% 12%;
-    --input: 37 9% 12%;
-    --primary: 37 39% 88%;
-    --primary-foreground: 37 39% 28%;
-    --secondary: 37 12% 13%;
-    --secondary-foreground: 37 12% 73%;
-    --accent: 37 12% 13%;
-    --accent-foreground: 37 12% 73%;
-    --destructive: 13 48% 23%;
-    --destructive-foreground: 13 48% 83%;
-    --ring: 37 39% 88%;
+    @apply bg-background text-foreground;
   }
 }

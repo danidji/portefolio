@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo%20Tammudu%202:700|Noto%20Sans%20Cypriot:400');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +6,7 @@
 @layer base {
   :root {
     --background: 33 69% 97%;
+    --background-light: 30 50% 99%;
     --foreground: 32 5% 0%;
     --card: 32 50% 90%;
     --card-foreground: 32 5% 10%;
@@ -20,13 +22,14 @@
     --accent-foreground: 32 5% 10%;
     --destructive: 0 100% 30%;
     --destructive-foreground: 32 5% 90%;
-    --border: 32 30% 50%;
+    --border: 31 48% 64%;
     --input: 32 30% 18%;
     --ring: 32 37.9% 46.1%;
     --radius: 0.5rem;
   }
   .dark {
     --background: 32 50% 5%;
+    --background-light: 30 12% 7%;
     --foreground: 32 5% 90%;
     --card: 32 50% 0%;
     --card-foreground: 32 5% 90%;
@@ -53,7 +56,52 @@
   * {
     @apply border-border;
   }
+  html,
+  body {
+    @apply h-dvh;
+    @apply w-dvw;
+    @apply overflow-hidden;
+  }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Noto Sans Cypriot';
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: 'Baloo Tammudu 2';
+    font-weight: 700;
+  }
+
+  html {
+    font-size: 100%;
+  } /* 16px */
+
+  h1 {
+    font-size: 4.21rem; /* 67.36px */
+  }
+
+  h2 {
+    font-size: 3.158rem; /* 50.56px */
+  }
+
+  h3 {
+    font-size: 2.369rem; /* 37.92px */
+  }
+
+  h4 {
+    font-size: 1.777rem; /* 28.48px */
+  }
+
+  h5 {
+    font-size: 1.333rem; /* 21.28px */
+  }
+
+  small {
+    font-size: 0.75rem; /* 12px */
   }
 }

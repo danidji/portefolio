@@ -2,5 +2,9 @@
   "common": {
     "hello": "Bonjour",
     "client": "Monde"
+  },
+  "auth": {
+    "hello": "Salut,",
+    "welcome": "Bienvenue à toi 😎"
   }
 }

@@ -19,7 +19,6 @@ export default function RootLayout({
   children: React.ReactNode
   params: {lng: string}
 }>) {
-  console.log('layout lng', lng)
   return (
     <html lang={lng} dir={dir(lng)}>
       <body>{children}</body>

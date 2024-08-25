@@ -79,6 +79,9 @@ const config = {
         heading: 'Baloo Tammudu 2',
         body: 'Noto Sans Cypriot',
       },
+      flex: {
+        '2': '2 2 0%',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

@@ -5,6 +5,14 @@
   },
   "auth": {
     "hello": "Salut,",
-    "welcome": "Bienvenue à toi 😎"
+    "welcome": "Bienvenue à toi 😎",
+    "email": "Email",
+    "password": "Mot de passe",
+    "lastname": "Nom",
+    "firstname": "Prénom",
+    "register": "S'inscrire",
+    "login": "Se connecter",
+    "passwordError": "Au moins 8 caractères",
+    "hey": "Hey, te revoilà 👌🏽"
   }
 }

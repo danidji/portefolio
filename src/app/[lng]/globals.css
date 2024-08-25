@@ -20,7 +20,7 @@
     --muted-foreground: 32 5% 35%;
     --accent: -6 30% 80%;
     --accent-foreground: 32 5% 10%;
-    --destructive: 0 100% 30%;
+    --destructive: 0 100% 40%;
     --destructive-foreground: 32 5% 90%;
     --border: 31 48% 64%;
     --input: 32 30% 18%;
@@ -82,23 +82,15 @@
   } /* 16px */
 
   h1 {
-    font-size: 4.21rem; /* 67.36px */
+    font-size: 1.875rem; /* 30px */
   }
 
   h2 {
-    font-size: 3.158rem; /* 50.56px */
+    font-size: 1.5rem; /* 24px */
   }
 
   h3 {
-    font-size: 2.369rem; /* 37.92px */
-  }
-
-  h4 {
-    font-size: 1.777rem; /* 28.48px */
-  }
-
-  h5 {
-    font-size: 1.333rem; /* 21.28px */
+    font-size: 1.25rem; /* 18px */
   }
 
   small {

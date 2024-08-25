@@ -6,6 +6,7 @@ import {useForm} from 'react-hook-form'
 import {InputField, PasswordInput} from '@/components'
 import {RegisterSchema, TRegister} from '@/models'
 import {useTranslation} from '@/app/i18n/client'
+import {Button} from '@/components/ui/button'
 
 export default function Register({
   params: {lng},
@@ -30,10 +31,32 @@ export default function Register({
       <h1 className='text-3xl font-bold'>{t('auth.welcome')}</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
-        <InputField {...register('email')} label='Email' icon='email' />
-        <PasswordInput {...register('password')} />
-        <InputField {...register('firstname')} label='Prénom' icon='user' />
-        <InputField {...register('lastname')} label='Nom' icon='user' />
+        <InputField
+          {...register('email')}
+          label={t('auth.email')}
+          icon='email'
+          isError={!!errors.email}
+        />
+        <PasswordInput
+          {...register('password')}
+          label={t('auth.password')}
+          errorMsg={errors.password ? t('auth.passwordError') : undefined}
+        />
+        <InputField
+          {...register('firstname')}
+          label={t('auth.firstname')}
+          icon='user'
+          isError={!!errors.firstname}
+        />
+        <InputField
+          {...register('lastname')}
+          label={t('auth.lastname')}
+          icon='user'
+          isError={!!errors.lastname}
+        />
+        <Button type='submit' className='mt-2 text-base'>
+          {t('auth.register')}
+        </Button>
       </form>
     </main>
   )

@@ -6,10 +6,11 @@ import clsx from 'clsx'
 type InputFieldProps = InputProps & {
   label: string
   icon?: string
+  isError?: boolean
 }
 
 export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
-  ({label, icon, ...props}, ref) => {
+  ({label, icon, isError, ...props}, ref) => {
     return (
       <div className='flex flex-col gap-2'>
         <label htmlFor={props.name}>{label}</label>
@@ -23,6 +24,7 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             ref={ref}
             {...props}
             className={clsx(icon ? 'pl-12' : 'pl-4')}
+            isError={!!isError}
           />
         </div>
       </div>

@@ -14,5 +14,8 @@
     "login": "Se connecter",
     "passwordError": "Au moins 8 caractères",
     "hey": "Hey, te revoilà 👌🏽"
+  },
+  "error": {
+    "alreadyUser": "Utilisateur déjà existant"
   }
 }

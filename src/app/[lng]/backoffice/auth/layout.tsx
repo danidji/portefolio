@@ -12,7 +12,7 @@ export default function Layout({
   const page = pathname.split('/').pop()
 
   return (
-    <main className='h-full w-full flex flex-col md:flex-row justify-center  items-center md:justify-around md:px-24'>
+    <div className='h-full w-full flex flex-col md:flex-row justify-center  items-center md:justify-around md:px-24'>
       <div className=' flex justify-end'>
         <div className='p-6 rounded-lg border border-border bg-background-light w-[400px] '>
           {children}
@@ -24,6 +24,6 @@ export default function Layout({
           containerClass='w-full h-full'
         />
       </div>
-    </main>
+    </div>
   )
 }

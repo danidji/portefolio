@@ -32,7 +32,8 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           />
           <button
             onClick={() => setShowPassword(!showPassword)}
-            className='absolute right-4 top-0 h-full'>
+            className='absolute right-4 top-0 h-full'
+            type='button'>
             <Icon type={showPassword ? 'eye_close' : 'eye_open'} size='20px' />
           </button>
           {errorMsg && (

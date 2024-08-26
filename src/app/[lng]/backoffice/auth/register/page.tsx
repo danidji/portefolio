@@ -2,16 +2,21 @@
 
 import {zodResolver} from '@hookform/resolvers/zod'
 import {useForm} from 'react-hook-form'
+import {useRouter} from 'next/navigation'
 
 import {InputField, PasswordInput} from '@/components'
-import {RegisterSchema, TRegister} from '@/models'
+import {EErrorCode, RegisterSchema, TRegister} from '@/models'
 import {useTranslation} from '@/app/i18n/client'
 import {Button} from '@/components/ui/button'
+import {registerUser} from '@/actions/auth.actions'
+import {useToast} from '@/components/ui/use-toast'
 
 export default function Register({
   params: {lng},
 }: Readonly<{params: {lng: string}}>) {
+  const router = useRouter()
   const {t} = useTranslation(lng)
+  const {toast} = useToast()
 
   const {
     register,
@@ -21,8 +26,17 @@ export default function Register({
     resolver: zodResolver(RegisterSchema),
   })
 
-  const onSubmit = (data: TRegister) => {
-    console.log(data)
+  const onSubmit = async (data: TRegister) => {
+    const registerAction = await registerUser(data)
+
+    if (registerAction?.error === EErrorCode.ALREADY_USER) {
+      toast({
+        variant: 'destructive',
+        title: t('error.alreadyUser'),
+      })
+      return
+    }
+    router.push('/backoffice/auth/login')
   }
 
   return (

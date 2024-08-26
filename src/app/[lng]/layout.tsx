@@ -2,6 +2,7 @@ import type {Metadata} from 'next'
 import {dir} from 'i18next'
 import './globals.css'
 import {languages} from '../i18n/settings'
+import {Toaster} from '@/components'
 
 export const metadata: Metadata = {
   title: 'Dany Gbelidji',
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={lng} dir={dir(lng)}>
-      <body>{children}</body>
+      <body>
+        <main className='h-full w-full'>{children}</main>
+        <Toaster />
+      </body>
     </html>
   )
 }

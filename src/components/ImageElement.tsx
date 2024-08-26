@@ -17,7 +17,7 @@ export function ImageElement({
   const IconMappingObject: Record<string, JSX.Element> = {
     [type]: (
       <div className={cn('relative', containerClass)}>
-        <Image src={ImagesSvg[type]} alt={`${type} icon`} fill />
+        <Image src={ImagesSvg[type]} alt={`${type} icon`} fill priority />
       </div>
     ),
   }

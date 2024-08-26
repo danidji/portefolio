@@ -4,3 +4,7 @@ export enum EInputType {
   EMAIL = 'email',
   NUMBER = 'number',
 }
+
+export enum EErrorCode {
+  ALREADY_USER = 'alreadyUser',
+}

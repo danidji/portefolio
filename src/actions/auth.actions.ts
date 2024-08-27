@@ -1,8 +1,10 @@
 'use server'
 
+import {signIn} from '@/auth'
 import prisma from '@/lib/prisma'
-import {EErrorCode, TRegister} from '@/models'
+import {EErrorCode, TLogin, TRegister} from '@/models'
 import {hash} from 'bcryptjs'
+import {CredentialsSignin} from 'next-auth'
 
 export const registerUser = async (data: TRegister) => {
   const {email, password, firstname, lastname} = data
@@ -30,5 +32,26 @@ export const registerUser = async (data: TRegister) => {
     return {
       error: error.message,
     }
+  }
+}
+
+export const loginUser = async (data: TLogin) => {
+  const {email, password} = data
+
+  try {
+    await signIn('credentials', {
+      redirect: false,
+      // redirectTo: '/backoffice/dashboard',
+      callbackUrl: '/',
+      email,
+      password,
+    })
+  } catch (error) {
+    console.log('error', error)
+
+    const someError = error as CredentialsSignin
+    console.log('someError', someError)
+
+    return someError.cause
   }
 }

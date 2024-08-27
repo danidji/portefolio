@@ -1,16 +1,19 @@
 'use client'
 
-import {useTranslation} from '@/app/i18n/client'
-import {Icon, Input, InputField, PasswordInput} from '@/components'
-import {Button} from '@/components/ui/button'
-import {LoginSchema, TLogin} from '@/models'
-import {zodResolver} from '@hookform/resolvers/zod'
 import {useForm} from 'react-hook-form'
+import {zodResolver} from '@hookform/resolvers/zod'
+import {useRouter} from 'next/navigation'
+
+import {useTranslation} from '@/app/i18n/client'
+import {InputField, PasswordInput, Button} from '@/components'
+import {LoginSchema, TLogin} from '@/models'
+import {loginUser} from '@/actions'
 
 export default function Login({
   params: {lng},
 }: Readonly<{params: {lng: string}}>) {
   const {t} = useTranslation(lng)
+  const router = useRouter()
 
   const {
     register,
@@ -20,8 +23,11 @@ export default function Login({
     resolver: zodResolver(LoginSchema),
   })
 
-  const onSubmit = (data: TLogin) => {
+  const onSubmit = async (data: TLogin) => {
     console.log(data)
+    const loginAction = await loginUser(data)
+    router.push('/backoffice/dashboard')
+    console.log(loginAction)
   }
 
   return (

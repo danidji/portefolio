@@ -4,11 +4,10 @@ import {zodResolver} from '@hookform/resolvers/zod'
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
 
-import {InputField, PasswordInput} from '@/components'
+import {InputField, PasswordInput, Button} from '@/components'
 import {EErrorCode, RegisterSchema, TRegister} from '@/models'
 import {useTranslation} from '@/app/i18n/client'
-import {Button} from '@/components/ui/button'
-import {registerUser} from '@/actions/auth.actions'
+import {registerUser} from '@/actions'
 import {useToast} from '@/components/ui/use-toast'
 
 export default function Register({

@@ -38,6 +38,7 @@ export const {handlers, auth, signIn, signOut} = NextAuth({
         }
 
         const isMatched = await compare(password, user.password)
+        console.log('isMatched', isMatched)
 
         if (!isMatched) {
           throw new Error('Password did not matched')
@@ -49,6 +50,7 @@ export const {handlers, auth, signIn, signOut} = NextAuth({
           lastName: user.lastName,
           email: user.email,
         }
+        console.log('uerData', userData)
 
         return userData
       },

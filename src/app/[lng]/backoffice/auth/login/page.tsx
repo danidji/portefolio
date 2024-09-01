@@ -8,6 +8,7 @@ import {useTranslation} from '@/app/i18n/client'
 import {InputField, PasswordInput, Button} from '@/components'
 import {LoginSchema, TLogin} from '@/models'
 import {loginUser} from '@/actions'
+import {toast} from '@/components/ui/use-toast'
 
 export default function Login({
   params: {lng},
@@ -24,7 +25,14 @@ export default function Login({
   })
 
   const onSubmit = async (data: TLogin) => {
-    await loginUser(data)
+    const result = await loginUser(data)
+    if (result?.error) {
+      toast({
+        variant: 'destructive',
+        title: t('error.login'),
+      })
+      return
+    }
     router.push('/backoffice/dashboard')
   }
 

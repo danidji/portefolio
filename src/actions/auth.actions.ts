@@ -45,11 +45,9 @@ export const loginUser = async (data: TLogin) => {
       password,
     })
   } catch (error: any) {
-    // console.log('error', error)
-
     const someError = error as CredentialsSignin
-    console.log('someError', someError.message)
+    console.error('someError', someError.cause)
 
-    return someError.cause
+    return {error: EErrorCode.LOGIN}
   }
 }

@@ -16,6 +16,7 @@
     "hey": "Hey, te revoilà 👌🏽"
   },
   "error": {
-    "alreadyUser": "Utilisateur déjà existant"
+    "alreadyUser": "Utilisateur déjà existant",
+    "login": "Erreur connexion"
   }
 }

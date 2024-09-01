@@ -7,4 +7,5 @@ export enum EInputType {
 
 export enum EErrorCode {
   ALREADY_USER = 'alreadyUser',
+  LOGIN = 'login',
 }

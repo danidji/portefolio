@@ -37,7 +37,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
             <Icon type={showPassword ? 'eye_close' : 'eye_open'} size='20px' />
           </button>
           {errorMsg && (
-            <span className='absolute -bottom-4 left-2 text-xs text-destructive'>
+            <span className='absolute -bottom-5 left-2 text-xs text-destructive'>
               {errorMsg}
             </span>
           )}

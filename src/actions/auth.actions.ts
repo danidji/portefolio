@@ -1,6 +1,6 @@
 'use server'
 
-import {signIn} from '@/auth'
+import {signIn, auth} from '@/auth'
 import prisma from '@/lib/prisma'
 import {EErrorCode, TLogin, TRegister} from '@/models'
 import {hash} from 'bcryptjs'
@@ -41,16 +41,14 @@ export const loginUser = async (data: TLogin) => {
   try {
     await signIn('credentials', {
       redirect: false,
-      // redirectTo: '/backoffice/dashboard',
-      callbackUrl: '/',
       email,
       password,
     })
-  } catch (error) {
-    console.log('error', error)
+  } catch (error: any) {
+    // console.log('error', error)
 
     const someError = error as CredentialsSignin
-    console.log('someError', someError)
+    console.log('someError', someError.message)
 
     return someError.cause
   }

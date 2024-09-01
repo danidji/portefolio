@@ -1,6 +1,6 @@
-'use server'
+'use client'
 
-export default async function Layout({
+export default function Layout({
   children,
   params: {lng},
 }: Readonly<{children: React.ReactNode; params: {lng: string}}>) {

@@ -24,10 +24,8 @@ export default function Login({
   })
 
   const onSubmit = async (data: TLogin) => {
-    console.log(data)
-    const loginAction = await loginUser(data)
+    await loginUser(data)
     router.push('/backoffice/dashboard')
-    console.log(loginAction)
   }
 
   return (
@@ -47,7 +45,7 @@ export default function Login({
           errorMsg={errors.password ? t('auth.passwordError') : undefined}
         />
 
-        <Button type='submit' className='mt-2 text-base'>
+        <Button type='submit' className='mt-4 text-base'>
           {t('auth.login')}
         </Button>
       </form>

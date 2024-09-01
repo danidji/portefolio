@@ -18,5 +18,12 @@
   "error": {
     "alreadyUser": "Utilisateur déjà existant",
     "login": "Erreur connexion"
+  },
+  "app": {
+    "infos": "Infos",
+    "projects": "Projets",
+    "services": "Services",
+    "skills": "Compétences",
+    "content": "Contenu"
   }
 }

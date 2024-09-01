@@ -5,17 +5,16 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import {Icon} from './Icon'
+import {PropsWithChildren} from 'react'
 
 type AccordionProps = {
   title: string
-  content: JSX.Element | JSX.Element[]
-
   colapsible?: boolean
-}
+} & PropsWithChildren
 
 export function AccordionComponent({
   title,
-  content,
+  children,
   colapsible = true,
 }: AccordionProps) {
   return (
@@ -25,7 +24,7 @@ export function AccordionComponent({
           <Icon type='content' size='24px' />
           <p className='font-light leading-none flex-1 text-start'>{title}</p>
         </AccordionTrigger>
-        <AccordionContent>{content}</AccordionContent>
+        <AccordionContent>{children}</AccordionContent>
       </AccordionItem>
     </Accordion>
   )

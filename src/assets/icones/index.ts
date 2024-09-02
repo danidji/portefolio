@@ -4,6 +4,7 @@ import email from './email.svg'
 import password from './password.svg'
 import user from './user.svg'
 import content from './content.svg'
+import logout from './logout.svg'
 
 const IconesSvg: Record<string, string> = {
   eye_open,
@@ -11,6 +12,7 @@ const IconesSvg: Record<string, string> = {
   email,
   password,
   user,
+  logout,
   content,
 }
 

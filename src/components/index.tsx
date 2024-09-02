@@ -4,6 +4,7 @@ export * from './ImageElement'
 export * from './InputField'
 export * from './Drawer'
 export * from './AccordionComponent'
+export * from './Header'
 
 export * from './ui/input'
 export * from './ui/toaster'

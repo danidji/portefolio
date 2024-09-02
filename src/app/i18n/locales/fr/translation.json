@@ -24,6 +24,9 @@
     "projects": "Projets",
     "services": "Services",
     "skills": "Compétences",
-    "content": "Contenu"
+    "content": "Contenu",
+    "save": "Sauvegarder",
+    "title": "Titre",
+    "bio": "Bio"
   }
 }

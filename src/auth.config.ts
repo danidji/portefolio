@@ -1,7 +1,8 @@
 import {CredentialsSignin, NextAuthConfig} from 'next-auth'
-import prisma from '@/lib/prisma'
 import Credentials from 'next-auth/providers/credentials'
 import {compare} from 'bcryptjs'
+
+import prisma from '@/lib/prisma'
 
 export default {
   providers: [
@@ -36,7 +37,6 @@ export default {
         }
 
         const isMatched = await compare(password, user.password)
-        console.log('isMatched', isMatched)
 
         if (!isMatched) {
           throw new Error('Password did not matched')
@@ -48,7 +48,6 @@ export default {
           lastName: user.lastName,
           email: user.email,
         }
-        console.log('uerData', userData)
 
         return userData
       },

@@ -1,6 +1,6 @@
 'use server'
 
-import {signIn, auth} from '@/auth'
+import {signIn, signOut} from '@/auth'
 import prisma from '@/lib/prisma'
 import {EErrorCode, TLogin, TRegister} from '@/models'
 import {hash} from 'bcryptjs'
@@ -46,8 +46,12 @@ export const loginUser = async (data: TLogin) => {
     })
   } catch (error: any) {
     const someError = error as CredentialsSignin
-    console.error('someError', someError.cause)
+    console.error('error', someError.cause)
 
     return {error: EErrorCode.LOGIN}
   }
+}
+
+export const logoutUser = async () => {
+  await signOut()
 }

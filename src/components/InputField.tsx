@@ -4,7 +4,7 @@ import {Icon} from './Icon'
 import clsx from 'clsx'
 
 type InputFieldProps = InputProps & {
-  label: string
+  label?: string
   icon?: string
   isError?: boolean
 }
@@ -12,8 +12,8 @@ type InputFieldProps = InputProps & {
 export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   ({label, icon, isError, ...props}, ref) => {
     return (
-      <div className='flex flex-col gap-2'>
-        <label htmlFor={props.name}>{label}</label>
+      <div className='flex flex-col gap-2 w-full'>
+        {label && <label htmlFor={props.name}>{label}</label>}
         <div className='relative'>
           {icon && (
             <div className='absolute left-4 flex h-full items-center'>

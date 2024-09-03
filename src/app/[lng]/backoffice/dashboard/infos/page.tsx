@@ -49,19 +49,19 @@ export default function Infos({
   return (
     <div className='w-full h-[calc(100%-64px)] py-8'>
       <form className='flex flex-col gap-8'>
-        <div className='flex items-center'>
+        <div className='flex items-start'>
           <label htmlFor='title' className='min-w-16 font-light text-lg'>
             {t('app.title')}
           </label>
           <InputField {...register('title')} />
         </div>
-        <div className='flex items-center'>
+        <div className='flex items-start'>
           <label htmlFor='bio' className='min-w-16 font-light text-lg'>
             {t('app.bio')}
           </label>
           <Textarea {...register('bio')} />
         </div>
-        <div className='flex items-center'>
+        <div className='flex items-start'>
           <label htmlFor='' className='min-w-16 font-light text-lg'>
             {t('auth.email')}
           </label>
